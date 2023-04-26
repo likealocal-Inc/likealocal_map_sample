@@ -97,7 +97,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -125,7 +125,7 @@
 
 .thirteen::before,
 .thirteen::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
 }
@@ -275,4 +275,27 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+/* 자동완성 목록 스타일 */
+.autocompletelist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px; /* 최대 높이 설정 */
+  overflow-y: auto; /* 스크롤바 표시 설정 */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 자동완성 목록 항목 스타일 */
+.autocompleteitem {
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* 자동완성 목록 항목 호버 스타일 */
+.autocompleteitem:hover {
+  background-color: #f3f3f3;
 }
