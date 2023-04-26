@@ -47,6 +47,8 @@ const GoogleMapBasic: NextPage = () => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyACq7gF8WbQr5oYUIZSNg4AW9hzI0phA6w", //process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string,
     libraries: libraries as any,
+    language: "en",
+    region: "kr",
   });
 
   const mapRef = useRef(null);
@@ -261,7 +263,7 @@ const PlacesAutocomplete = ({
     setValue,
     clearSuggestions,
   } = usePlacesAutocomplete({
-    requestOptions: { componentRestrictions: { country: "kr" } },
+    // requestOptions: { componentRestrictions: { country: "ko" } },
     debounce: 300,
     cache: 86400,
   });
