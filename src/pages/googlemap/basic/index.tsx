@@ -145,6 +145,23 @@ const GoogleMapBasic: NextPage = () => {
       bounds.extend(endLoction.get());
       mapRef.current.fitBounds(bounds);
     }
+
+    if ("geolocation" in navigator) {
+      // 현재 위치를 가져옴
+      navigator.geolocation.getCurrentPosition(
+        function (location) {
+          var lat = location.coords.latitude;
+          var lng = location.coords.longitude;
+          console.log(lat, lng);
+        },
+        function (err) {
+          console.log(err);
+          alert("위치 정보를 가져오는데 실패했습니다. 오류: " + err);
+        }
+      );
+    } else {
+      alert("이 브라우저는 위치 서비스를 지원하지 않습니다.");
+    }
   }, [
     isLoaded,
     mapCenter,
